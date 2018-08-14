@@ -1,0 +1,45 @@
+<div class="sidebar">
+    <p-confirmDialog width="500"></p-confirmDialog>
+
+  <nav>
+    <ul>
+
+      <li>
+        <a routerLink="" [class.activated]="currentUrl == '/'">
+          <i class="material-icons" matTooltip="Browse Events">event</i>
+        </a>
+        
+      </li>
+
+      <li>
+        <a routerLink="forms" [class.activated]="currentUrl == '/forms'">
+          <i class="material-icons" matTooltip="Create Event">assignment</i>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="profile" [class.activated]="currentUrl == '/profile'">
+          <i class="material-icons" matTooltip="Profile">face</i>
+        </a>
+      </li>
+
+
+      <li id = "settingsIcon">
+        <a (click)= "confirmLogout()" 
+          [class.disabled] = "currentUrl == '/login' || currentUrl == '/register' 
+              || currentUrl == '/login?returnUrl=%2F' || currentUrl == '/login?returnUrl=%2Fforms'
+              || currentUrl == '/login?returnUrl=%2Fprofile'" >
+          <i class="material-icons">exit_to_app</i>
+        </a>
+          
+      </li>
+      
+    </ul>
+    
+    
+  </nav> 
+
+</div>
+
+
+  

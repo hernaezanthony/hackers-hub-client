@@ -1,0 +1,72 @@
+
+<mat-card id = "formContainer">
+        <mat-card-header id = "mchdr">
+                <h1 id = "hdr"><strong>Edit Event</strong></h1>
+        </mat-card-header>
+            
+    
+        <mat-card-content>
+
+
+
+<form [formGroup]="angularForm" (ngSubmit) = "onSubmit()" >
+  <div class="form-group">
+    
+    
+    
+    <mat-form-field>
+        <input matInput placeholder="Name" type = "text"  class="form-control" formControlName="name" required>
+        <mat-error *ngIf="(nameControl.invalid)"> {{getErrorMessage()}} </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <input matInput placeholder="Location" type = "text"  class="form-control" formControlName="location" required>
+        <mat-error *ngIf="(locationControl.invalid)"> {{getErrorMessage()}} </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-select formControlName="type" placeholder="Select Type of Event" value = {{event$.type}}>
+            <mat-option *ngFor="let type of types" [value]="type.value">
+              {{type.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <br>
+
+    <mat-form-field >
+            <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br>   
+    
+    <mat-form-field>
+            <input formControlName="time" matInput placeholder="Select Time" aria-label="12hr format" [ngxTimepicker]="default" readonly>
+            <ngx-material-timepicker #default></ngx-material-timepicker>
+    </mat-form-field>   
+    
+    <br>
+    
+    <button mat-stroked-button type = "submit" class = "btn btn-primary"
+				 matTooltip="Press to Submit Entries">
+				 Submit
+    </button>
+
+    <br>
+
+    <button mat-stroked-button type = "button" (click) = "gotoHome()" class = "btn btn-danger">
+                Cancel
+    </button>
+  </div>
+</form>
+
+  
+</mat-card-content>
+
+</mat-card>

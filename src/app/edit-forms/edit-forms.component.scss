@@ -1,0 +1,35 @@
+.form-group{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group> * {
+    width: 100%;
+  }
+
+  #formContainer{
+    width:50%; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #hdr{
+    color: #00A8FF;;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ::ng-deep .mat-card-header{
+    background-color:#2D2E2E !important;
+    padding:25px !important;
+  }
+  
+  ::ng-deep .mat-card{
+    padding:0 !important;
+  }
+  
+  ::ng-deep .mat-card-content{
+    padding:25px !important;
+  }
+
+  

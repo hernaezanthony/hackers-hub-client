@@ -1,0 +1,51 @@
+div.sidenav{
+    position: relative;
+}
+
+
+nav {
+    background: #2D2E2E;
+    height: 100%;
+    position: fixed;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+      
+
+        li {
+            float: top;
+            a {
+                color: #fff;
+                padding: 20px;
+                display: block;
+                cursor: pointer;                
+                
+            }
+
+            .activated {
+                background-color: #00A8FF;
+            }
+
+            .disabled{
+                cursor: not-allowed;
+                pointer-events: none;
+                color: #2D2E2E;
+                visibility: hidden;
+            }   
+        }
+
+    }
+    
+    #settingsIcon {
+        position: absolute;
+        bottom: 10px;    
+      }
+
+    #logoutBtn{
+        cursor: pointer; 
+    }
+}
+

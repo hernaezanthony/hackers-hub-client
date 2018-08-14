@@ -1,0 +1,52 @@
+
+      <mat-card id = "formContainer">
+        
+          <mat-card-header id = "mchdr">
+                  <h1 id = "hdr"><strong>User Information</strong></h1>
+          </mat-card-header>
+    
+          <mat-card-content>
+
+              <div>
+
+                <h4 ><strong>
+                  Username:
+                </strong></h4>
+
+                <h4>
+                  {{this.currentUser.username}}
+                </h4>
+
+                <h4><strong>
+                  First Name:
+                </strong></h4>
+
+                <h4>
+                  {{this.currentUser.firstName| titlecase}}
+                </h4>
+
+                <h4><strong>
+                  Last Name:
+                </strong></h4>
+
+                <h4>
+                  {{this.currentUser.lastName| titlecase}}
+                </h4>
+
+              </div>
+
+              <div class = "actionButtons" style="display: flex; justify-content: flex-end">
+                <ul>
+                  
+                  <li id = "asdf" layout="row">
+                    <b  class="btn btn-primary">
+                    <i id = "actions" class="material-icons">edit</i>
+                    </b> 
+                  </li>
+
+                </ul>
+              </div> 
+
+            </mat-card-content>
+
+            </mat-card>

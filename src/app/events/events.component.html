@@ -1,0 +1,49 @@
+   <p-confirmDialog width="500"></p-confirmDialog>
+
+    <h1><strong>Events</strong></h1>
+
+    <div class="topcorner">
+
+      <a routerLink="forms">
+        <i class="material-icons">add_circle</i>
+      </a>
+
+    </div>
+
+  <div class="ui-g">
+      <div class="ui-g-6" *ngFor="let event of events$">
+          <ul>
+            <li >
+              
+              <a>{{ event.name }}</a>
+
+              <ul>
+                <li>{{ event.location }}</li>
+                <li>{{ event.type }}</li>
+                <li>{{event.date |  date:'MMMM dd, yyyy'}}</li>
+                <li>{{ event.time }}</li>
+                <li>Created by: {{ event.created_by }}</li>
+              </ul>
+
+              <div class = "actionButtons" style="display: flex; justify-content: flex-end">
+                <ul>
+                  
+                  <li id = "asdf" layout="row">
+                    <b routerLink="/edit/{{event.id}}" class="btn btn-primary">
+                    <i id = "actions" class="material-icons">edit</i>
+                    </b> 
+                  </li>
+
+                  <li id = "asdf" layout="row"> 
+                      <button (click) = "confirm(event.id)" class="btn btn-danger">
+                          <i  id = "actions" class="material-icons">delete</i> 
+                      </button>
+                  </li>
+
+                </ul>
+              </div> 
+
+            </li>
+          </ul>
+       </div>
+    </div>
